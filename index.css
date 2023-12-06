@@ -10,6 +10,63 @@
   background-color: #fafbff;
 }
 
+#checkbox {
+    display: none;
+  }
+  
+  .toggle {
+    position: fixed;
+    top: 36px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition-duration: .3s;
+    z-index: 5;
+  }
+  
+  .bars {
+    width: 100%;
+    height: 4px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    transition-duration: .3s;
+  }
+  
+  /* #checkbox:checked + .toggle .bars {
+    margin-left: 13px;
+  } */
+  
+  #checkbox:checked + .toggle #bar2 {
+    transform: translateY(14px) rotate(60deg);
+    margin-left: 0;
+    transform-origin: right;
+    transition-duration: .3s;
+    z-index: 2;
+  }
+  
+  #checkbox:checked + .toggle #bar1 {
+    transform: translateY(28px) rotate(-60deg);
+    transition-duration: .3s;
+    transform-origin: left;
+    z-index: 1;
+  }
+  
+  #checkbox:checked + .toggle {
+    transform: rotate(-90deg);
+  }
+  /* #checkbox:checked + .toggle #bar3 {
+    transform: rotate(90deg);
+    transition-duration: .3s;
+    transform-origin:right;
+  } */
+  
+
 .menu {
   width: 306px;
   height: 1198px;
@@ -196,6 +253,13 @@
   height: 1198px;
   display: flex;
   flex-direction: column;
+}
+
+.content__mobile-burger-menu-button {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    z-index: 3;
 }
 
 .content__welcome-text {
@@ -510,4 +574,64 @@
     line-height: 12px;
     letter-spacing: -0.01em;
     text-align: left;
+}
+
+@media (max-width: 480px){
+    .menu {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: 2;
+		position: fixed;
+		overflow-y: scroll;
+		right: -100%;
+		transition: 1s;
+	}
+
+    .menu__logo-block {
+        position: absolute;
+    }
+
+    .menu__list {
+        width: 90%;
+        margin: 150px auto 0 auto;
+      }
+      
+      .menu__list__button {
+        width: 320px;
+        height: 34px;
+      }
+      
+      .menu__list__active-button-wrapper {
+        width: 340px;
+        height: 60px;
+      }
+      
+      .menu__list__active-button_wrapper__button_active {
+        width: 320px;
+        height: 34px;
+      }
+      
+      .menu__list__user-block {
+        top: 750px;
+      }
+
+    .content {
+        width: 400px;
+        height: 1198px;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .content__product-block {
+        display: none;
+        width: 968px;
+        height: 812px;
+        margin: 51px 0 0 71px;
+        border-radius: 30px;
+        background-color: #ffffff;
+        box-shadow: 0px 10px 60px 0px #e2ecf980;
+      }
+
+    
 }
