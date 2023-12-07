@@ -618,6 +618,8 @@
   .content__product-block__table__item {
     width: 90%;
     height: 300px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .hidden-text {
